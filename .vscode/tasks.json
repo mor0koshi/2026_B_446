@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build firmware",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "--preset",
+        "Debug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Flash firmware (ST-Link)",
+      "type": "shell",
+      "command": "st-flash",
+      "args": [
+        "write",
+        "build/Debug/446_encoder.bin",
+        "0x8000000"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": [
+        "Build firmware"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
