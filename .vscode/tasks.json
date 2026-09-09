@@ -21,7 +21,7 @@
       "command": "st-flash",
       "args": [
         "write",
-        "build/Debug/446_encoder.bin",
+        "build/Debug/2026_B_446.bin",
         "0x8000000"
       ],
       "options": {
